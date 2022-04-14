@@ -570,9 +570,86 @@ library(dplyr)</code></pre>
 <pre class="r"><code>chocolate&lt;-filter(candy_data,chocolate==1)
 Highwin&lt;-filter(candy_data,winpercent&gt;=50)</code></pre>
 <p>#This dataframe has 85 rows and 13 columns</p>
-<pre class="r"><code>text_tbl&lt;-tibble(candy_data)
+<pre class="r"><code>text_tbl&lt;-data.frame(chocolate)
 Names=c(&quot;chocolate&quot;,&quot;winpercent&quot;)
-Description=c(&quot;1 if the candy is chocolate,0 if not&quot;,&quot;Shows the percentage at which that candy won its matchup&quot;)</code></pre>
+Description=c(&quot;1 if the candy is chocolate,0 if not&quot;,&quot;Shows the percentage at which that candy won its matchup&quot;)
+text_tbl</code></pre>
+<pre><code>##                 competitorname chocolate fruity caramel peanutyalmondy nougat
+## 1                    100 Grand         1      0       1              0      0
+## 2                 3 Musketeers         1      0       0              0      1
+## 3                   Almond Joy         1      0       0              1      0
+## 4                    Baby Ruth         1      0       1              1      1
+## 5              Charleston Chew         1      0       0              0      1
+## 6             HersheyÕs Kisses         1      0       0              0      0
+## 7            HersheyÕs Krackel         1      0       0              0      0
+## 8     HersheyÕs Milk Chocolate         1      0       0              0      0
+## 9       HersheyÕs Special Dark         1      0       0              0      0
+## 10                Junior Mints         1      0       0              0      0
+## 11                     Kit Kat         1      0       0              0      0
+## 12         Peanut butter M&amp;MÕs         1      0       0              1      0
+## 13                       M&amp;MÕs         1      0       0              0      0
+## 14                   Milk Duds         1      0       1              0      0
+## 15                   Milky Way         1      0       1              0      1
+## 16          Milky Way Midnight         1      0       1              0      1
+## 17    Milky Way Simply Caramel         1      0       1              0      0
+## 18                      Mounds         1      0       0              0      0
+## 19                 Mr Good Bar         1      0       0              1      0
+## 20         Nestle Butterfinger         1      0       0              1      0
+## 21               Nestle Crunch         1      0       0              0      0
+## 22                 Peanut M&amp;Ms         1      0       0              1      0
+## 23          ReeseÕs Miniatures         1      0       0              1      0
+## 24   ReeseÕs Peanut Butter cup         1      0       0              1      0
+## 25              ReeseÕs pieces         1      0       0              1      0
+## 26 ReeseÕs stuffed with pieces         1      0       0              1      0
+## 27                        Rolo         1      0       1              0      0
+## 28                     Sixlets         1      0       0              0      0
+## 29             Nestle Smarties         1      0       0              0      0
+## 30                    Snickers         1      0       1              1      1
+## 31            Snickers Crisper         1      0       1              1      0
+## 32                 Tootsie Pop         1      1       0              0      0
+## 33        Tootsie Roll Juniors         1      0       0              0      0
+## 34        Tootsie Roll Midgies         1      0       0              0      0
+## 35     Tootsie Roll Snack Bars         1      0       0              0      0
+## 36                        Twix         1      0       1              0      0
+## 37                    Whoppers         1      0       0              0      0
+##    crispedricewafer hard bar pluribus sugarpercent pricepercent winpercent
+## 1                 1    0   1        0        0.732        0.860   66.97173
+## 2                 0    0   1        0        0.604        0.511   67.60294
+## 3                 0    0   1        0        0.465        0.767   50.34755
+## 4                 0    0   1        0        0.604        0.767   56.91455
+## 5                 0    0   1        0        0.604        0.511   38.97504
+## 6                 0    0   0        1        0.127        0.093   55.37545
+## 7                 1    0   1        0        0.430        0.918   62.28448
+## 8                 0    0   1        0        0.430        0.918   56.49050
+## 9                 0    0   1        0        0.430        0.918   59.23612
+## 10                0    0   0        1        0.197        0.511   57.21925
+## 11                1    0   1        0        0.313        0.511   76.76860
+## 12                0    0   0        1        0.825        0.651   71.46505
+## 13                0    0   0        1        0.825        0.651   66.57458
+## 14                0    0   0        1        0.302        0.511   55.06407
+## 15                0    0   1        0        0.604        0.651   73.09956
+## 16                0    0   1        0        0.732        0.441   60.80070
+## 17                0    0   1        0        0.965        0.860   64.35334
+## 18                0    0   1        0        0.313        0.860   47.82975
+## 19                0    0   1        0        0.313        0.918   54.52645
+## 20                0    0   1        0        0.604        0.767   70.73564
+## 21                1    0   1        0        0.313        0.767   66.47068
+## 22                0    0   0        1        0.593        0.651   69.48379
+## 23                0    0   0        0        0.034        0.279   81.86626
+## 24                0    0   0        0        0.720        0.651   84.18029
+## 25                0    0   0        1        0.406        0.651   73.43499
+## 26                0    0   0        0        0.988        0.651   72.88790
+## 27                0    0   0        1        0.860        0.860   65.71629
+## 28                0    0   0        1        0.220        0.081   34.72200
+## 29                0    0   0        1        0.267        0.976   37.88719
+## 30                0    0   1        0        0.546        0.651   76.67378
+## 31                1    0   1        0        0.604        0.651   59.52925
+## 32                0    1   0        0        0.604        0.325   48.98265
+## 33                0    0   0        0        0.313        0.511   43.06890
+## 34                0    0   0        1        0.174        0.011   45.73675
+## 35                0    0   1        0        0.465        0.325   49.65350
+## 36                1    0   1        0        0.546        0.906   81.64291
+## 37                1    0   0        1        0.872        0.848   49.52411</code></pre>
 <pre class="r"><code>#Picking three columns to use summary function 
 data_pick3&lt;-select(candy_data,chocolate,sugarpercent,pricepercent)</code></pre>
 <pre class="r"><code>summarytable&lt;-summary(data_pick3,candy_data)
