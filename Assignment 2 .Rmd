@@ -1,0 +1,45 @@
+---
+title: "Assignment 2"
+author: "Connor Schnable"
+date: '2022-04-07'
+output:
+  html_document: default
+  pdf_document: default
+---
+This dataset is one that captures the power rankings of 86 different candies. Some of the variables include: "chocolate, fruity, peanutyalmondy, nougat, crispedwafer, hard, bar, pluribus, sugarpercent, pricepercent, winpercent." This was collected by asking over 8,000 people about 269,000 randomly generated matchups between candies. I am hoping to answer a simple question, "Which candy is the best candy based on these results?" The data is saved in a chart on a csv file. A csv file is a flat file and is delimited since each character is separated by a comma. The program that most commonly opens a csv is microsoft word. But there are tons of software examples that can open up a csv. 
+```{r setup, include=TRUE}
+knitr::opts_chunk$set(echo = TRUE)
+candy_data <- read.csv("candy-data.csv")
+#I used the simple read.csv to read in the csv file with the data in it. 
+library(dplyr)
+```
+
+
+```{r}
+select(candy_data,chocolate,winpercent)
+summarise(candy_data,winpercent)
+chocolate<-filter(candy_data,chocolate==1)
+Highwin<-filter(candy_data,winpercent>=50)
+```
+#This dataframe has `r nrow(candy_data)` rows and `r ncol(candy_data)` columns
+
+
+```{r}
+text_tbl<-data.frame(chocolate)
+Names=c("chocolate","winpercent")
+Description=c("1 if the candy is chocolate,0 if not","Shows the percentage at which that candy won its matchup")
+text_tbl
+```
+
+
+```{r}
+#Picking three columns to use summary function 
+data_pick3<-select(candy_data,chocolate,sugarpercent,pricepercent)
+```
+```{r,include=TRUE}
+summarytable<-summary(data_pick3,candy_data)
+summarytable
+```
+
+
+
